@@ -47,24 +47,73 @@ body {
 
 #star-btn {
   background: url('./assets-ideabox/star-active.svg');
-  width: 40px;
-  height: 40px;
 }
 
 #delete-btn {
   background: url('./assets-ideabox/delete.svg');
-  width: 40px;
-  height: 40px;
 }
 
 #comment-btn {
   background: url('./assets-ideabox/comment.svg');
-  width: 40px;
-  height: 40px;
 }
 .card-section {
-  border: 4px solid red;
+  /* border: 4px solid red; */
   background-color: #EAEAF4;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around;
+  align-content: space-around; */
+
+}
+
+.card {
+  background-color: #FFFFFF;
+  width: 30%;
+  border: 1.5px solid #1F1E3C;
+  margin: 10px;
+  width: 225px;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+#card-body-p {
+  font-weight: 300;
+  color: #1f1f3d;
+}
+
+header {
+  background-color: #1F1E3C;
+  display: flex;
+  justify-content: space-between;
+}
+
+#star-btn,
+#delete-btn,
+#comment-btn {
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+
+}
+
+footer {
+  background-color: #5356A5;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+#comment {
+  margin: 0;
+  padding: 5px;
 }
 
 .sidebar,
@@ -107,7 +156,7 @@ body {
 }
 
 .sidebar-empty {
-  height: 100%;
+  height: 100vh;
 }
 
 .input-section {
