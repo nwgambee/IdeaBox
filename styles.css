@@ -215,17 +215,11 @@ footer {
     }
 }
 
-@media screen and (max-width: 620px) {
-    main {
-        grid-template-rows: 22% 78%;
-    }
-}
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
     main {
         display: block;
     }
-    /* .sidebar {
+    .sidebar {
         height: auto;
         margin: 0;
         width: 100%;
@@ -235,10 +229,10 @@ footer {
         background-position: left;
         background-size: 40px;
         background-position-x: 3%;
-    } */
-    /* .filter {
+    }
+    .filter {
         display: none;
-    } */
+    }
     .input-section {
         width: 100%;
         text-align: center;
@@ -262,14 +256,26 @@ footer {
     }
     .search-form {
         display: inline-flex;
-        width: 92%;
-        margin: 10px auto;
+        width: 96%;
+        margin: 3% auto;
+        /* border: 1px solid red; */
+        justify-content: center;
+    }
+    #search-btn {
+        display: inline-flex;
+    }
+    #search-input {
+        width: 85%;
     }
     .card {
         width: 90%;
     }
+    .input-labels {
+        text-align: left;
+        padding-left: 4.5%;
+    }
     /* DROPDOWN MENU TOGGLED ON */
-    .sidebar {
+    /* .sidebar {
         height: auto;
         margin: 0;
         width: 100%;
@@ -287,5 +293,15 @@ footer {
     #show-starred-btn {
         padding: 14px;
         font-size: 1.8em;
+    } */
+}
+
+@media screen and (min-width: 1550px) {
+    main {
+        grid-template-rows: 60% 40%;
+    }
+    .title,
+    .filter {
+        padding: 0 7%;
     }
 }
