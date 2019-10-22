@@ -1,15 +1,16 @@
 body {
     margin: 0;
-    height: 100vh;
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     background-color: #EAEAF4;
+}
+
+main {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 40% 60%;
     grid-gap: 2px;
-    /* grid-template-areas:
-  "sidebar" */
+    grid-template-areas: "sidebar inputsection" "sidebar cardsection"
 }
 
 .search-form {
@@ -57,12 +58,10 @@ body {
 }
 
 .card-section {
-    /* border: 4px solid red; */
     background-color: #EAEAF4;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-around;
-  align-content: space-around; */
+    grid-area: cardsection;
 }
 
 .card {
@@ -114,9 +113,13 @@ footer {
     padding: 5px;
 }
 
-.sidebar,
-.sidebar-empty {
+.sidebar {
     background-color: #1f1f3d;
+    grid-area: sidebar;
+    height: 100vh;
+    position: fixed;
+    margin: 0;
+    width: 20%;
 }
 
 .title {
@@ -149,12 +152,9 @@ footer {
     padding: 5px;
 }
 
-.sidebar-empty {
-    height: 100vh;
-}
-
 .input-section {
     background-color: #A9AAD2;
+    grid-area: inputsection;
 }
 
 .form {
@@ -173,7 +173,7 @@ footer {
 }
 
 .body-input {
-    height: 3em;
+    height: 100px;
 }
 
 .input-labels {
@@ -199,4 +199,93 @@ footer {
 #comment-btn:hover,
 #search-btn:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 931px) {
+    .card-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    main {
+        grid-template-rows: 30% 70%;
+    }
+    #search-btn {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    main {
+        grid-template-rows: 22% 78%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        display: block;
+    }
+    /* .sidebar {
+        height: auto;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        background-image: url('./assets-ideabox/menu.svg');
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 40px;
+        background-position-x: 3%;
+    } */
+    /* .filter {
+        display: none;
+    } */
+    .input-section {
+        width: 100%;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .card-section {
+        width: 100%;
+    }
+    .form {
+        width: 100%;
+        display: flex;
+    }
+    .title-input,
+    .body-input {
+        margin: auto;
+        width: 90%;
+    }
+    #save-btn {
+        width: 92%;
+        margin: 10px auto;
+    }
+    .search-form {
+        display: inline-flex;
+        width: 92%;
+        margin: 10px auto;
+    }
+    .card {
+        width: 90%;
+    }
+    /* DROPDOWN MENU TOGGLED ON */
+    .sidebar {
+        height: auto;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        background-image: url('./assets-ideabox/delete.svg');
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 50px;
+        background-position-x: 3%;
+        background-position-y: 4%;
+    }
+    .filter {
+        text-align: left;
+    }
+    #show-starred-btn {
+        padding: 14px;
+        font-size: 1.8em;
+    }
 }
