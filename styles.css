@@ -62,6 +62,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     grid-area: cardsection;
+    padding-left: 2%;
 }
 
 .card {
@@ -213,9 +214,16 @@ footer {
     #search-btn {
         width: 50px;
     }
+
+    #show-starred-btn {
+      font-size: 1em;
+    }
+    .sidebar {
+      width: 25%;
+    }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
     main {
         display: block;
     }
@@ -240,6 +248,7 @@ footer {
     }
     .card-section {
         width: 100%;
+        padding-left: 0;
     }
     .form {
         width: 100%;
