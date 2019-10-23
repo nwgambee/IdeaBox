@@ -198,11 +198,12 @@ footer {
 #star-btn:hover,
 #delete-btn:hover,
 #comment-btn:hover,
-#search-btn:hover {
+#search-btn:hover,
+#comment:hover {
     cursor: pointer;
 }
 
-@media screen and (max-width: 931px) {
+@media screen and (max-width: 950px) {
     .card-section {
         display: flex;
         flex-wrap: wrap;
