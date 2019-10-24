@@ -19,6 +19,6 @@ form.addEventListener('click', addCard);
 
 function addCard() {
   if (event.target.id === 'save-btn') {
-    console.log('adding a new card!');
+    console.log('adding a new card!!');
   }
 }
