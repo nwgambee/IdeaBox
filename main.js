@@ -13,3 +13,12 @@ form.addEventListener('input', function toggleDisableSave(event) {
         saveBtn.disabled = true;
     }
 })
+
+
+form.addEventListener('click', addCard);
+
+function addCard() {
+  if (event.target.id === 'save-btn') {
+    console.log('adding a new card!');
+  }
+}
