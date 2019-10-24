@@ -20,20 +20,12 @@ function toggleDisableSave(event) {
 form.addEventListener('click', addCard);
 
 function addCard(event) {
-  if (event.target.id === 'save-btn') {
-    console.log('adding a new card!!');
-    if((titleInput !== '') && (bodyInput !== '')) {
-      titleInput.value = '';
-      bodyInput.value = '';
-      toggleDisableSave();
-}}
+    if (event.target.id === 'save-btn') {
+        console.log('adding a new card!!');
+        if ((titleInput !== '') && (bodyInput !== '')) {
+            titleInput.value = '';
+            bodyInput.value = '';
+            toggleDisableSave();
+        }
+    }
 };
-
-
-//Code snippet to be added to form event listener to clear the input fields once the save btn is clicked.
-  // if((titleInput !== '') && (bodyInput !== '')) {
-  //   //Code to create new card here.
-  //   titleInput.value = '';
-  //   bodyInput.value = '';
-  //
-  // }
