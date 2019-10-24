@@ -64,6 +64,7 @@ main {
     flex-wrap: wrap;
     grid-area: cardsection;
     padding-left: 2%;
+    height: 300px;
 }
 
 .card {
