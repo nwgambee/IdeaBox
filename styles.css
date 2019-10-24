@@ -5,11 +5,10 @@ body {
     background-color: #EAEAF4;
 }
 
-
 main {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 40% 60%;
+    grid-template-rows: 2fr 3fr;
     grid-gap: 2px;
     grid-template-areas: "sidebar inputsection" "sidebar cardsection"
 }
@@ -68,8 +67,8 @@ main {
 
 .card {
     background-color: #FFFFFF;
-    width: 30%;
     border: 1.5px solid #1F1E3C;
+    height: fit-content;
     margin: 10px;
     width: 225px;
 }
