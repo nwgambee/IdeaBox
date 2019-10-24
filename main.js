@@ -6,11 +6,11 @@ var form = document.querySelector('.form')
 
 form.addEventListener('input', function toggleDisableSave(event) {
     if (titleInput.value !== "" && bodyInput.value !== "") {
-        console.log('hmm')
         saveBtn.classList.add('save-btn')
         saveBtn.disabled = false;
-    } else if (titleInput.value === "" && bodyInput.value === "") {
+    } else {
         saveBtn.classList.remove('save-btn')
+        saveBtn.disabled = true;
     }
 })
 
