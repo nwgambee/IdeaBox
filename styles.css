@@ -222,7 +222,7 @@ footer {
         justify-content: center;
     }
     main {
-        grid-template-rows: 30% 70%;
+        grid-template-rows: 2fr 3fr;
     }
     #search-btn {
         width: 50px;
@@ -319,7 +319,7 @@ footer {
 
 @media screen and (min-width: 1550px) {
     main {
-        grid-template-rows: 60% 40%;
+        grid-template-rows: 2fr 3fr;
     }
     .title,
     .filter {
