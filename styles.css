@@ -49,6 +49,16 @@ main {
     background: url('./assets-ideabox/star-active.svg');
 }
 
+.star-image {
+    background: url('./assets-ideabox/star-active.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    height: 30px;
+    width: 30px;
+    border-style: none;
+}
+
 #delete-btn {
     background: url('./assets-ideabox/delete.svg');
 }
@@ -72,6 +82,10 @@ main {
     margin: 10px;
     width: 225px;
 }
+
+
+/* Default height of card is 238px, we could either keep it like this
+and add an overflow property to the box, or we attempt a masonry layout  */
 
 .card-body {
     padding: 10px;
