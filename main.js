@@ -5,7 +5,6 @@ var form = document.querySelector('.form');
 var cardSection = document.querySelector('.card-section');
 var ideas = [];
 var idea = new Idea(titleInput.value, bodyInput.value);
-var ideaIdKey = idea.id;
 
 
 // disable save button until forms have content
@@ -77,7 +76,7 @@ cardSection.addEventListener('click', deleteIdeaCard);
 
 function deleteIdeaCard(event) {
 
-  if (idea.id === (ideaIdKey)) {
+  if (idea.id) {
     event.target.parentElement.parentElement.remove();
   }
 }
