@@ -68,3 +68,13 @@ function starIdea() {
     console.log(ideaId);
     console.log(containsId);
 }
+
+cardSection.addEventListener('click', deleteIdeaCard);
+// Deletes a specific card that is selected from the card section.
+
+function deleteIdeaCard(event) {
+
+  if (event.target.attributes.name.nodeValue === 'delete') {
+    event.target.parentElement.parentElement.remove();
+  }
+}
