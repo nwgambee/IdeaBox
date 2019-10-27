@@ -4,6 +4,8 @@ var saveBtn = document.querySelector('#save-btn');
 var form = document.querySelector('.form');
 var cardSection = document.querySelector('.card-section');
 var ideas = [];
+var idea = new Idea(titleInput.value, bodyInput.value);
+
 
 // disable save button until forms have content
 form.addEventListener('input', toggleDisableSave);
@@ -67,4 +69,15 @@ function starIdea() {
     console.log(ideas);
     console.log(ideaId);
     console.log(containsId);
+}
+
+cardSection.addEventListener('click', deleteIdeaCard);
+// Deletes a card from the card section based on the Idea object's id property.
+
+function deleteIdeaCard(event) {
+  var deletedIdea = idea.id;
+
+  if (idea.id === (deletedIdea)) {
+    event.target.parentElement.parentElement.remove();
+  }
 }
