@@ -26,6 +26,8 @@ function addCard(event) {
         var idea = new Idea(titleInput.value, bodyInput.value);
         ideas.push(idea);
         addIdeaCard();
+        var stringifiedIdeas = JSON.stringify(ideas);
+        localStorage.setItem('ideas', stringifiedIdeas);
 
 // reset inputs on 'Save' (could be its own method)
   if ((titleInput !== '') && (bodyInput !== '')) {
@@ -62,5 +64,11 @@ function starIdea(event) {
     if (event.target.classList.contains("star-image")) {
         event.target.classList.toggle('star-image-active');
     }
+    if (event.target.classList.contains("star-image-active")) {
+        ideas.starred = true;
+    } else {
+        ideas.starred = false;
+    }
 
-    };
+
+  };
