@@ -46,11 +46,11 @@ main {
 }
 
 #star-btn {
-    background: url('./assets-ideabox/star-active.svg');
+    background: url('./assets-ideabox/star.svg');
 }
 
 .star-image {
-    background: url('./assets-ideabox/star-active.svg');
+    background: url('./assets-ideabox/star.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
