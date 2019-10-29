@@ -4,6 +4,7 @@ var saveBtn = document.querySelector('#save-btn');
 var form = document.querySelector('.form');
 var cardSection = document.querySelector('.card-section');
 var ideas = [];
+// var starBtn = document.querySelector('.star-image')
 
 // disable save button until forms have content
 form.addEventListener('input', toggleDisableSave);
@@ -21,24 +22,25 @@ function toggleDisableSave(event) {
 form.addEventListener('click', addCard);
 
 function addCard(event) {
-
-    if (event.target.id === 'save-btn') {
+  if (event.target.id === 'save-btn') {
         var idea = new Idea(titleInput.value, bodyInput.value);
         ideas.push(idea);
         addIdeaCard();
+        var stringifiedIdeas = JSON.stringify(ideas);
+        localStorage.setItem('ideas', stringifiedIdeas);
 
-        // reset inputs on 'Save' (could be its own method)
-        if ((titleInput !== '') && (bodyInput !== '')) {
+// reset inputs on 'Save' (could be its own method)
+  if ((titleInput !== '') && (bodyInput !== '')) {
             titleInput.value = '';
             bodyInput.value = '';
             toggleDisableSave();
-        }
     }
+  }
 };
 
 function addIdeaCard() {
   var lastIdea = ideas[ideas.length - 1];
-  cardSection.innerHTML += `<div class="card">
+  cardSection.innerHTML += `<div id='${lastIdea.id}' class="card">
       <header>
           <button id='${lastIdea.id}'  class="star-image" type="button" name="star"></button>
           <button id="delete-btn" type="button" name="delete"></button>
@@ -56,18 +58,20 @@ function addIdeaCard() {
 
 cardSection.addEventListener('click', starIdea);
 
-function starIdea() {
+function starIdea(event) {
     // use bubbling to target the star button on a specific card, and store the ID of that card in a variable.
     // With that variable, access the specific idea instance within the ideas array and run the starCard() method.
-    var ideaId = event.target.id;
-    for (var i = 0; i < ideas.length; i++) {
-      ideas[i];
+    if (event.target.classList.contains("star-image")) {
+        event.target.classList.toggle('star-image-active');
     }
-    var containsId = ideas.includes(ideaId, i);
-    console.log(ideas);
-    console.log(ideaId);
-    console.log(containsId);
-}
+    if (event.target.classList.contains("star-image-active")) {
+        ideas.starred = true;
+    } else {
+        ideas.starred = false;
+    }
+
+
+  };
 
 cardSection.addEventListener('click', deleteIdeaCard);
 // Deletes a specific card that is selected from the card section.
