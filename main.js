@@ -9,6 +9,14 @@ var ideas = [];
 // disable save button until forms have content
 form.addEventListener('input', toggleDisableSave);
 
+getFromStorage();
+
+function getFromStorage() {
+    var getIdea = localStorage.getItem('ideas')
+    parsedIdeas = JSON.parse(getIdea)
+    console.log(parsedIdeas)
+}
+
 function toggleDisableSave(event) {
     if (titleInput.value !== "" && bodyInput.value !== "") {
         saveBtn.classList.add('save-btn')
@@ -22,32 +30,32 @@ function toggleDisableSave(event) {
 form.addEventListener('click', addCard);
 
 function addCard(event) {
-  if (event.target.id === 'save-btn') {
-        var idea = new Idea(titleInput.value, bodyInput.value);
+    if (event.target.id === 'save-btn') {
+        idea = new Idea(titleInput.value, bodyInput.value);
         ideas.push(idea);
         addIdeaCard();
-        var stringifiedIdeas = JSON.stringify(ideas);
-        localStorage.setItem('ideas', stringifiedIdeas);
+        idea.saveToStorage(ideas)
 
-// reset inputs on 'Save' (could be its own method)
-  if ((titleInput !== '') && (bodyInput !== '')) {
+        // reset inputs on 'Save' (could be its own method)
+        if ((titleInput !== '') && (bodyInput !== '')) {
             titleInput.value = '';
             bodyInput.value = '';
             toggleDisableSave();
+        }
     }
-  }
 };
 
 function addIdeaCard() {
-  var lastIdea = ideas[ideas.length - 1];
-  cardSection.innerHTML += `<div id='${lastIdea.id}' class="card">
+    // var lastIdea = ideas[ideas.length - 1];
+    for (var i = 0; i < ideas.length; i++)
+        cardSection.innerHTML += `<div id='${parsedIdeas[i].id}' class="card">
       <header>
-          <button id='${lastIdea.id}'  class="star-image" type="button" name="star"></button>
+          <button id='${parsedIdeas[i].id}'  class="star-image" type="button" name="star"></button>
           <button id="delete-btn" type="button" name="delete"></button>
       </header>
       <div class="card-body">
-          <h2>${lastIdea.title}</h2>
-          <p id="card-body-p">${lastIdea.body}</p>
+          <h2>${parsedIdeas[i].title}</h2>
+          <p id="card-body-p">${parsedIdeas[i].body}</p>
       </div>
       <footer class="comment">
           <button id="comment-btn" type="button" name="button"></button>
@@ -64,21 +72,15 @@ function starIdea(event) {
     if (event.target.classList.contains("star-image")) {
         event.target.classList.toggle('star-image-active');
     }
-    if (event.target.classList.contains("star-image-active")) {
-        ideas.starred = true;
-    } else {
-        ideas.starred = false;
-    }
-
-
-  };
+    idea.starCard(ideas)
+};
 
 cardSection.addEventListener('click', deleteIdeaCard);
 // Deletes a specific card that is selected from the card section.
 
 function deleteIdeaCard(event) {
 
-  if (event.target.attributes.name.nodeValue === 'delete') {
-    event.target.parentElement.parentElement.remove();
-  }
+    if (event.target.attributes.name.nodeValue === 'delete') {
+        event.target.parentElement.parentElement.remove();
+    }
 }
