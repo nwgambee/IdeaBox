@@ -3,7 +3,7 @@ class Idea {
       this.title = title;
       this.body = body;
       this.id = Date.now();
-      this.starred = false;
+      // this.starred = false;
     }
     starCard() {
       this.starred = !this.starred;
