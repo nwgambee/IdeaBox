@@ -45,12 +45,18 @@ main {
     margin-left: 0;
 }
 
-#star-btn {
-    background: url('./assets-ideabox/star.svg');
-}
-
 .star-image {
     background: url('./assets-ideabox/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    height: 30px;
+    width: 30px;
+    border-style: none;
+}
+
+.star-image-active {
+    background: url('./assets-ideabox/star-active.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;

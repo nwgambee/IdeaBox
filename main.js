@@ -59,13 +59,9 @@ cardSection.addEventListener('click', starIdea);
 function starIdea(event) {
     // use bubbling to target the star button on a specific card, and store the ID of that card in a variable.
     // With that variable, access the specific idea instance within the ideas array and run the starCard() method.
-    var ideaId = event.target.id;
-    ideaId.toString();
-    var lastIdea = ideas[ideas.length - 1];
-      if (event.target.className === 'star-image') {
-        lastIdea.starCard();
-        document.querySelector(".star-image").style.backgroundImage = "url('./assets-ideabox/star-active.svg')";
-  }
-
+    if (event.target.classList.contains("star-image")) {
+        event.target.classList.toggle('star-image-active');
+    } else {
+    }
 
     };

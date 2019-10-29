@@ -6,7 +6,7 @@ class Idea {
       this.starred = false;
     }
     starCard() {
-      this.starred = true;
+      this.starred = !this.starred;
     }
     saveToStorage() {
 
