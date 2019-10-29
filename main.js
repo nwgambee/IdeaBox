@@ -61,7 +61,6 @@ function starIdea(event) {
     // With that variable, access the specific idea instance within the ideas array and run the starCard() method.
     if (event.target.classList.contains("star-image")) {
         event.target.classList.toggle('star-image-active');
-    } else {
     }
 
     };
