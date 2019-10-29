@@ -5,15 +5,14 @@ class Idea {
         this.id = Date.now();
         this.starred = false;
     }
-    starCard(ideasArr) {
+    starCard(event) {
         // use individual ID being created for each card
         // use that ID to iterate through the array
         // find which instance contains that ID
         // run starCard() on that instance
 
-        for (var i = 0; i < ideasArr.length; i++) {
-            if (ideasArr[i].id === this.id) {
-                console.log(this.id, ideasArr[i].id)
+        for (var i = 0; i < event.length; i++) {
+            if (event[i].id === this.id) {
                 this.starred = !this.starred;
             }
         }

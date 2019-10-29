@@ -13,7 +13,7 @@ getFromStorage();
 
 function getFromStorage() {
     var getIdea = localStorage.getItem('ideas')
-    parsedIdeas = JSON.parse(getIdea)
+    var parsedIdeas = JSON.parse(getIdea)
     console.log(parsedIdeas)
 }
 
@@ -46,16 +46,15 @@ function addCard(event) {
 };
 
 function addIdeaCard() {
-    // var lastIdea = ideas[ideas.length - 1];
-    for (var i = 0; i < ideas.length; i++)
-        cardSection.innerHTML += `<div id='${parsedIdeas[i].id}' class="card">
+    var lastIdea = ideas[ideas.length - 1];
+    cardSection.innerHTML += `<div id='${lastIdea.id}' class="card">
       <header>
-          <button id='${parsedIdeas[i].id}'  class="star-image" type="button" name="star"></button>
+          <button id='${lastIdea.id}'  class="star-image" type="button" name="star"></button>
           <button id="delete-btn" type="button" name="delete"></button>
       </header>
       <div class="card-body">
-          <h2>${parsedIdeas[i].title}</h2>
-          <p id="card-body-p">${parsedIdeas[i].body}</p>
+          <h2>${lastIdea.title}</h2>
+          <p id="card-body-p">${lastIdea.body}</p>
       </div>
       <footer class="comment">
           <button id="comment-btn" type="button" name="button"></button>
