@@ -9,19 +9,19 @@ form.addEventListener('input', toggleDisableSave);
 cardSection.addEventListener('click', deleteIdeaCard);
 
 
-// function saveToStorage(ideas) {
-//     var stringifiedArr = JSON.stringify('stringArr', ideas)
-//     var savedItem = localStorage.setItem('stringArr', stringifiedArr)
-//     console.log(stringifiedArr, savedItem)
-// }
 
-// getFromStorage();
 
 // function getFromStorage() {
-//     var getIdea = localStorage.getItem('ideas')
-//     var parsedIdeas = JSON.parse(getIdea)
+//     var getIdea = localStorage.getItem('stringArr');
+//     var parsedIdeas = JSON.parse(getIdea);
 //     console.log(parsedIdeas)
+//     if (ideas.length >= 1) {
+//       ideas.push(parsedIdeas);
+//       console.log(ideas);
+//     }
 // }
+//
+// getFromStorage();
 
 function toggleDisableSave(event) {
     if (titleInput.value !== "" && bodyInput.value !== "") {
@@ -41,7 +41,7 @@ function addCard(event) {
         ideas.push(idea);
         addIdeaCard();
 
-        // saveToStorage(ideas)
+        idea.saveToStorage(ideas)
         if ((titleInput !== '') && (bodyInput !== '')) {
             titleInput.value = '';
             bodyInput.value = '';
@@ -82,6 +82,7 @@ function starIdea(event) {
         console.log(arrayId, objId)
         if (arrayId === objId) {
             ideas[i].starCard()
+            ideas[i].saveToStorage(ideas);
         }
     }
 }
@@ -96,6 +97,8 @@ function deleteIdeaCard(event) {
         var objId = parseInt(uniqueId)
         if (arrayId === objId) {
             ideas.splice(i, 1)
+            ideas[i].saveToStorage(ideas);
         }
     }
+
 }
