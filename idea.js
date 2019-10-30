@@ -7,15 +7,15 @@ class Idea {
     }
     starCard() {
         this.starred = !this.starred
+        console.log('test');
     }
 
     saveToStorage(allIdeas) {
 
         for (var i = 0; i < allIdeas.length; i++) {
-          var stringifiedArr = JSON.stringify(allIdeas);
+          // var stringifiedArr = JSON.stringify(allIdeas);
           localStorage.setItem('stringArr', JSON.stringify(allIdeas));
         }
-        console.log(stringifiedArr)
     }
 
     deleteFromStorage() {
