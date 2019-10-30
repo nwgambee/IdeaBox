@@ -12,8 +12,8 @@ class Idea {
     saveToStorage(allIdeas) {
 
         for (var i = 0; i < allIdeas.length; i++) {
-          var stringifiedArr = JSON.stringify(allIdeas[i]);
-          localStorage.setItem('stringArr', JSON.stringify(allIdeas[i]));
+          var stringifiedArr = JSON.stringify(allIdeas);
+          localStorage.setItem('stringArr', JSON.stringify(allIdeas));
         }
         console.log(stringifiedArr)
     }
