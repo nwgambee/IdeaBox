@@ -65,9 +65,12 @@ main {
     border-style: none;
 }
 
-
-#delete-btn {
+.delete-btn {
     background: url('./assets-ideabox/delete.svg');
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
 }
 
 #comment-btn {
