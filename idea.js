@@ -10,6 +10,7 @@ class Idea {
     }
 
     deleteFromStorage() {
+        //local storage -> remove item
 
     }
     updateIdea() {
