@@ -31,10 +31,10 @@ form.addEventListener('click', addCard);
 
 function addCard(event) {
     if (event.target.id === 'save-btn') {
-        idea = new Idea(titleInput.value, bodyInput.value);
+        var idea = new Idea(titleInput.value, bodyInput.value);
         ideas.push(idea);
         addIdeaCard();
-        idea.saveToStorage(ideas)
+        // idea.saveToStorage(ideas)
 
         // reset inputs on 'Save' (could be its own method)
         if ((titleInput !== '') && (bodyInput !== '')) {
@@ -68,14 +68,24 @@ cardSection.addEventListener('click', starIdea);
 function starIdea(event) {
     // use bubbling to target the star button on a specific card, and store the ID of that card in a variable.
     // With that variable, access the specific idea instance within the ideas array and run the starCard() method.
+
     if (event.target.classList.contains("star-image")) {
         event.target.classList.toggle('star-image-active');
     }
-    idea.starCard(ideas)
-};
 
-cardSection.addEventListener('click', deleteIdeaCard);
-// Deletes a specific card that is selected from the card section.
+    var uniqueId = event.target.id;
+    for (var i = 0; i < ideas.length; i++) {
+        var arrayId = ideas[i].id
+        var objId = parseInt(uniqueId)
+        console.log(objId, arrayId)
+        if (arrayId === objId) {
+            ideas[i].starCard()
+        }
+    };
+
+    cardSection.addEventListener('click', deleteIdeaCard);
+    // Deletes a specific card that is selected from the card section.
+}
 
 function deleteIdeaCard(event) {
 
