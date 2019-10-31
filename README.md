@@ -1,6 +1,6 @@
 # IdeaBox
 
-** Tanisha Davey, Noah Gambee, Cody Smith **
+*Tanisha Davey, Noah Gambee, Cody Smith*
 IdeaBox is a web app that allows you to log different ideas onto a web page. You may 'star' or favorite a certain idea, and you may delete an idea if you choose to.
 
 We used HTML, CSS, and vanilla JS on this project. 
