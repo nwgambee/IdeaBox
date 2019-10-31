@@ -68,11 +68,9 @@ function starIdea(event) {
     if (event.target.classList.contains("star-image")) {
         event.target.classList.toggle('star-image-active');
     }
-    var uniqueId = event.target.id;
     for (var i = 0; i < ideas.length; i++) {
         var arrayId = ideas[i].id * 2
-        var objId = parseInt(uniqueId)
-        console.log(arrayId, objId)
+        var objId = parseInt(event.target.id)
         if (arrayId === objId) {
             ideas[i].starCard()
             ideas[i].saveToStorage(ideas);
@@ -84,10 +82,9 @@ function deleteIdeaCard(event) {
     if (event.target.className === 'delete-btn') {
         event.target.parentElement.parentElement.remove();
     }
-    var uniqueId = event.target.id;
     for (var i = 0; i < ideas.length; i++) {
         var arrayId = ideas[i].id
-        var objId = parseInt(uniqueId)
+        var objId = parseInt(event.target.id)
         if (arrayId === objId) {
             ideas.splice(i, 1)
             ideas[i].saveToStorage(ideas);
@@ -96,15 +93,14 @@ function deleteIdeaCard(event) {
 }
 
 function objectsIntoInstances(localObject) {
-  if (localObject !== null) {
-    for (var i = 0; i < localObject.length; i++) {
-      var newInstance = new Idea(localObject[i].title, localObject[i].body, localObject[i].id, localObject[i].starred);
-      console.log(newInstance);
-      ideas.push(newInstance);
+    if (localObject !== null) {
+        for (var i = 0; i < localObject.length; i++) {
+            var newInstance = new Idea(localObject[i].title, localObject[i].body, localObject[i].id, localObject[i].starred);
+            ideas.push(newInstance);
+        }
+        reinstantiateCards(ideas);
     }
-    reinstantiateCards(ideas);
-    }
-  }
+}
 
 
 function reinstantiateCards(newIdeas) {
@@ -123,5 +119,5 @@ function reinstantiateCards(newIdeas) {
           <p id="comment">Comment</p>
       </footer>
   </div>`
-}
+    }
 };
