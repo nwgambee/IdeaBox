@@ -91,10 +91,6 @@ main {
     width: 225px;
 }
 
-
-/* Default height of card is 238px, we could either keep it like this
-and add an overflow property to the box, or we attempt a masonry layout  */
-
 .card-body {
     padding: 10px;
 }
