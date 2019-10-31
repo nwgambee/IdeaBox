@@ -9,18 +9,10 @@ form.addEventListener('input', toggleDisableSave);
 cardSection.addEventListener('click', deleteIdeaCard);
 
 
-
-
 function getFromStorage() {
     var getIdea = localStorage.getItem('stringArr');
     var parsedIdeas = JSON.parse(getIdea);
-      if (parsedIdeas !== null) {
-        for (var i = 0; i < parsedIdeas.length; i++) {
-          ideas.push(parsedIdeas[i]);
-        }
-          reinstantiateCards(parsedIdeas);
-          console.log(parsedIdeas);
-      }
+    objectsIntoInstances(parsedIdeas);
 }
 
 getFromStorage();
@@ -76,22 +68,15 @@ function starIdea(event) {
     if (event.target.classList.contains("star-image")) {
         event.target.classList.toggle('star-image-active');
     }
-
     var uniqueId = event.target.id;
     for (var i = 0; i < ideas.length; i++) {
         var arrayId = ideas[i].id * 2
         var objId = parseInt(uniqueId)
         console.log(arrayId, objId)
         if (arrayId === objId) {
-            // event.target.classList.toggle('star-image-active');
             ideas[i].starCard()
-            // ideas[i].starred = !ideas[i].starred;
-
             ideas[i].saveToStorage(ideas);
         }
-        // if (ideas[i].starred === false) {
-        //
-        // }
     }
 }
 
@@ -108,12 +93,22 @@ function deleteIdeaCard(event) {
             ideas[i].saveToStorage(ideas);
         }
     }
-
 }
 
+function objectsIntoInstances(localObject) {
+  if (localObject !== null) {
+    for (var i = 0; i < localObject.length; i++) {
+      var newInstance = new Idea(localObject[i].title, localObject[i].body, localObject[i].id, localObject[i].starred);
+      console.log(newInstance);
+      ideas.push(newInstance);
+    }
+    reinstantiateCards(ideas);
+    }
+  }
+
+
 function reinstantiateCards(newIdeas) {
-  if (newIdeas !== null) {
-    for (var i = 0; i < newIdeas.length; i++) {
+    for (var i = 0; i < ideas.length; i++) {
         cardSection.innerHTML += `<div id='${newIdeas[i].id}' class="card">
       <header>
           <button id='${newIdeas[i].id * 2}'  class="star-image" type="button" name="star"></button>
@@ -128,8 +123,5 @@ function reinstantiateCards(newIdeas) {
           <p id="comment">Comment</p>
       </footer>
   </div>`
-    }
-    var reinstateInstance = new Idea(newIdeas[i].title, newIdeas[i].body)
-  }
-
 }
+};
