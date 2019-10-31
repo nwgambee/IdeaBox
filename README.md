@@ -4,4 +4,4 @@ IdeaBox is a web app that allows you to log different ideas onto a web page. You
 
 
 
-(https://github.com/nwgambee/IdeaBox/blob/master/assets-ideabox/Screen%20Shot%202019-10-31%20at%208.12.07%20AM.png?raw=true)
+![screencap1](https://github.com/nwgambee/IdeaBox/blob/master/assets-ideabox/Screen%20Shot%202019-10-31%20at%208.12.07%20AM.png)
