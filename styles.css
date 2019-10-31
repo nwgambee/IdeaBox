@@ -234,6 +234,7 @@ footer {
     padding-right: 10px;
 }
 
+/* STYLING FOR ON MEDIUM DISPLAY DEVICES (IPADS, ETC.)  */
 @media screen and (max-width: 950px) {
     .card-section {
         display: flex;
@@ -254,6 +255,7 @@ footer {
     }
 }
 
+/* STYLING FOR DISPLAY ON MOBILE DEVICES */
 @media screen and (max-width: 700px) {
     main {
         display: block;
@@ -313,7 +315,7 @@ footer {
         padding-left: 4.5%;
         text-align: left;
     }
-    /* DROPDOWN MENU TOGGLED ON */
+    /* STYLING FOR DROPDOWN MENU WHEN TOGGLED ON */
     /* .sidebar {
         background-image: url('./assets-ideabox/delete.svg');
         background-position-x: 3%;
@@ -335,6 +337,7 @@ footer {
     } */
 }
 
+/* STYLING FOR DISPLAY ON LARGER SCREENS */
 @media screen and (min-width: 1550px) {
     main {
         grid-template-rows: 2fr 3fr;
