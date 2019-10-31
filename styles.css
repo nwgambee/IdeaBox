@@ -13,6 +13,7 @@ main {
     grid-template-areas: "sidebar inputsection" "sidebar cardsection"
 }
 
+/* STYLING OF INPUT FORM */
 .search-form {
     display: inline-flex;
     margin-bottom: 15px;
@@ -41,6 +42,23 @@ main {
     margin-left: 0;
     padding: 10px;
     width: 87%;
+}
+
+.card-section {
+    background-color: #EAEAF4;
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: cardsection;
+    padding-left: 2%;
+}
+
+/* STYLING FOR CARDS THAT APPEAR ON PAGE AFTER INPUT IS SAVED */
+.card {
+    background-color: #FFFFFF;
+    border: 1.5px solid #1F1E3C;
+    height: fit-content;
+    margin: 10px;
+    width: 225px;
 }
 
 /* DEFAULT STYLING FOR STYLE STAR IMAGE ON A CARD */
@@ -73,20 +91,19 @@ main {
     background: url('./assets-ideabox/comment.svg');
 }
 
-.card-section {
-    background-color: #EAEAF4;
-    display: flex;
-    flex-wrap: wrap;
-    grid-area: cardsection;
-    padding-left: 2%;
+#star-btn,
+.delete-btn,
+#comment-btn {
+    background-repeat: no-repeat;
+    border: none;
+    height: 30px;
+    width: 30px;
 }
 
-.card {
-    background-color: #FFFFFF;
-    border: 1.5px solid #1F1E3C;
-    height: fit-content;
-    margin: 10px;
-    width: 225px;
+header {
+    background-color: #1F1E3C;
+    display: flex;
+    justify-content: space-between;
 }
 
 .card-body {
@@ -102,21 +119,6 @@ h2 {
     color: #1f1f3d;
 }
 
-header {
-    background-color: #1F1E3C;
-    display: flex;
-    justify-content: space-between;
-}
-
-#star-btn,
-.delete-btn,
-#comment-btn {
-    background-repeat: no-repeat;
-    border: none;
-    height: 30px;
-    width: 30px;
-}
-
 footer {
     align-items: center;
     background-color: #5356A5;
@@ -130,6 +132,7 @@ footer {
     padding: 5px;
 }
 
+/* STYLING FOR THE SIDEBAR */
 .sidebar {
     background-color: #1f1f3d;
     grid-area: sidebar;
