@@ -162,6 +162,18 @@ main {
     cursor: pointer;
 }
 
+#show-starred-btn {
+    background-color: #5356A5;
+    border-radius: 2px;
+    border: 1px solid #4B4F99;
+    color: #e9e9f3;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
 header {
     background-color: #1F1E3C;
     display: flex;
@@ -220,18 +232,6 @@ footer {
     margin: auto;
     padding-left: 10px;
     padding-right: 10px;
-}
-
-#show-starred-btn {
-    background-color: #5356A5;
-    border-radius: 2px;
-    border: 1px solid #4B4F99;
-    color: #e9e9f3;
-    font-size: 1.5em;
-    font-weight: 700;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    padding: 5px;
 }
 
 @media screen and (max-width: 950px) {
