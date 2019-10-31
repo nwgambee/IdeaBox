@@ -19,6 +19,59 @@ main {
     margin-bottom: 15px;
 }
 
+.input-section {
+    background-color: #A9AAD2;
+    grid-area: inputsection;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+}
+
+.title-input,
+.body-input {
+    border-radius: 3px;
+    border: 2px solid #4B4F99;
+    font-size: 1.5em;
+    margin-top: 4px;
+}
+
+.body-input {
+    height: 100px;
+}
+
+.input-labels {
+    font-size: .75em;
+    margin-top: 15px;
+}
+
+.save-btn-disabled {
+    background-color: #858696;
+    border-radius: 3px;
+    border: 2px solid #4B4F99;
+    color: #BFBFDD;
+    cursor: not-allowed;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 15px 0;
+    padding: 10px 0;
+}
+
+.save-btn {
+    background-color: #353567;
+    border-radius: 3px;
+    border: 2px solid #4B4F99;
+    color: #BFBFDD;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 15px 0;
+    padding: 10px 0;
+}
+
 #search-btn {
     background-color: #353567;
     background-image: url('./assets-ideabox/search.svg');
@@ -100,6 +153,15 @@ main {
     width: 30px;
 }
 
+#show-starred-btn:hover,
+#star-btn:hover,
+#delete-btn:hover,
+#comment-btn:hover,
+#search-btn:hover,
+#comment:hover {
+    cursor: pointer;
+}
+
 header {
     background-color: #1F1E3C;
     display: flex;
@@ -170,68 +232,6 @@ footer {
     margin-bottom: 20px;
     margin-top: 10px;
     padding: 5px;
-}
-
-.input-section {
-    background-color: #A9AAD2;
-    grid-area: inputsection;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 50%;
-}
-
-.title-input,
-.body-input {
-    border-radius: 3px;
-    border: 2px solid #4B4F99;
-    font-size: 1.5em;
-    margin-top: 4px;
-}
-
-.body-input {
-    height: 100px;
-}
-
-.input-labels {
-    font-size: .75em;
-    margin-top: 15px;
-}
-
-.save-btn-disabled {
-    background-color: #858696;
-    border-radius: 3px;
-    border: 2px solid #4B4F99;
-    color: #BFBFDD;
-    cursor: not-allowed;
-    font-size: 1em;
-    font-weight: 700;
-    margin: 15px 0;
-    padding: 10px 0;
-}
-
-.save-btn {
-    background-color: #353567;
-    border-radius: 3px;
-    border: 2px solid #4B4F99;
-    color: #BFBFDD;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 700;
-    margin: 15px 0;
-    padding: 10px 0;
-}
-
-#show-starred-btn:hover,
-#star-btn:hover,
-#delete-btn:hover,
-#comment-btn:hover,
-#search-btn:hover,
-#comment:hover {
-    cursor: pointer;
 }
 
 @media screen and (max-width: 950px) {
