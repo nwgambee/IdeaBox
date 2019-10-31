@@ -43,6 +43,7 @@ main {
     width: 87%;
 }
 
+/* DEFAULT STYLING FOR STYLE STAR IMAGE ON A CARD */
 .star-image {
     background-position: center;
     background-repeat: no-repeat;
@@ -53,6 +54,7 @@ main {
     width: 30px;
 }
 
+/* STYLING FOR STAR IMAGE ON CARD WHEN TOGGLE TO ACTIVED */
 .star-image-active {
     background-position: center;
     background-repeat: no-repeat;
@@ -63,7 +65,7 @@ main {
     width: 30px;
 }
 
-#delete-btn {
+.delete-btn {
     background: url('./assets-ideabox/delete.svg');
 }
 
@@ -107,7 +109,7 @@ header {
 }
 
 #star-btn,
-#delete-btn,
+.delete-btn,
 #comment-btn {
     background-repeat: no-repeat;
     border: none;
