@@ -9,19 +9,13 @@ form.addEventListener('input', toggleDisableSave);
 cardSection.addEventListener('click', deleteIdeaCard);
 
 
+function getFromStorage() {
+    var getIdea = localStorage.getItem('stringArr');
+    var parsedIdeas = JSON.parse(getIdea);
+    objectsIntoInstances(parsedIdeas);
+}
 
-
-// function getFromStorage() {
-//     var getIdea = localStorage.getItem('stringArr');
-//     var parsedIdeas = JSON.parse(getIdea);
-//     console.log(parsedIdeas)
-//     if (ideas.length >= 1) {
-//       ideas.push(parsedIdeas);
-//       console.log(ideas);
-//     }
-// }
-//
-// getFromStorage();
+getFromStorage();
 
 function toggleDisableSave(event) {
     if (titleInput.value !== "" && bodyInput.value !== "") {
@@ -74,7 +68,6 @@ function starIdea(event) {
     if (event.target.classList.contains("star-image")) {
         event.target.classList.toggle('star-image-active');
     }
-
     var uniqueId = event.target.id;
     for (var i = 0; i < ideas.length; i++) {
         var arrayId = ideas[i].id * 2
@@ -100,5 +93,35 @@ function deleteIdeaCard(event) {
             ideas[i].saveToStorage(ideas);
         }
     }
-
 }
+
+function objectsIntoInstances(localObject) {
+  if (localObject !== null) {
+    for (var i = 0; i < localObject.length; i++) {
+      var newInstance = new Idea(localObject[i].title, localObject[i].body, localObject[i].id, localObject[i].starred);
+      console.log(newInstance);
+      ideas.push(newInstance);
+    }
+    reinstantiateCards(ideas);
+    }
+  }
+
+
+function reinstantiateCards(newIdeas) {
+    for (var i = 0; i < ideas.length; i++) {
+        cardSection.innerHTML += `<div id='${newIdeas[i].id}' class="card">
+      <header>
+          <button id='${newIdeas[i].id * 2}'  class="star-image" type="button" name="star"></button>
+          <button id="${newIdeas[i].id}" class="delete-btn" type="button" name="delete"></button>
+      </header>
+      <div class="card-body">
+          <h2>${newIdeas[i].title}</h2>
+          <p id="card-body-p">${newIdeas[i].body}</p>
+      </div>
+      <footer class="comment">
+          <button id="comment-btn" type="button" name="button"></button>
+          <p id="comment">Comment</p>
+      </footer>
+  </div>`
+}
+};
